@@ -1,4 +1,11 @@
-
+﻿/*
+*	function cuantasHay(cadena, letra)
+*	cadena:  cadena de texto a analizar
+*	letra:   letra que se contabiliza
+*
+*	Contabiliza el numero de apariciones de un caracter en una cadena
+*
+*/
 	function cuantasHay(cadena, letra) {
 		cuenta = 0;
 		posicion = cadena.indexOf(letra);
@@ -9,7 +16,11 @@
 		return cuenta;
 	}
 
-	
+/*
+*	alEnviarRegistro()
+*	
+*	Valida los campos antes de realizar el envío del formulario
+*/
 	function alEnviarRegistro() {
 	    var respuesta = true;
 	    
@@ -28,6 +39,14 @@
 	    return respuesta;
 	  }
 
+/*
+*	function validarEmail(valor, msj, esSummit)
+*		valor:  cadena dirección email
+*		msj:    mensaje de validación
+*	Retorno: booleano, válido (true), no válido (false) 
+*
+*	Valida dirección de email
+*/
 	function validarEmail(valor, msj, esSummit) {
 		var res = false;
 		valor = valor.trim();
@@ -64,6 +83,14 @@
 		return res;	
 	}
 
+/*
+*	function validarEmail(valor, msj, esSummit)
+*		valor:  cadena dirección email
+*		msj:    mensaje de validación
+*	Retorno: booleano, válido (true), no válido (false) 
+*
+*	Valida dirección de email
+*/
 	function validarAlias(valor, msj, esSummit) {
 		var res = false;
 		var cadena = valor.trim();
@@ -83,6 +110,15 @@
 		}
 		return res;
 	}
+
+/*
+*	function validarPassword(valor, msj, esSummit)
+*		valor:  cadena password
+*		msj:    mensaje de validación
+*	Retorno: booleano, válido (true), no válido (false) 
+*
+*	Valida password
+*/
 	function validarPassword(valor, msj, esSummit) {
 		var res = false;
 		var cadena = valor.trim();
@@ -102,6 +138,15 @@
 		}
 		return res;
 	}
+
+/*
+*	function validarRepassword(valor, msj, esSummit)
+*		valor:  cadena repetir password
+*		msj:    mensaje de validación
+*	Retorno: booleano, válido (true), no válido (false) 
+*
+*	Valida repite password
+*/
 	function validarRepassword(valor, msj, esSummit) {
 		var res = false;
 
@@ -119,6 +164,13 @@
 		return res;	
 	}
 
+/*
+*	function validarPreguntas()
+*
+*	Retorno: booleano, válido (true), no válido (false) 
+*
+*	Si el elemento "preguntas" es mayor que cero se habilita el botón emitir
+*/
 	function validarPreguntas() {
 		var res = false;
 		var opt = document.getElementById("preguntas").value;
@@ -132,6 +184,14 @@
 		return res;	
 	}
 
+/*
+*	function validarRespuesta(valor, msj, esSummit)
+*		valor:  respuesta
+*		msj:    mensaje de validación
+*	Retorno: booleano, válido (true), no válido (false) 
+*
+*	Valida respuesta a la pregunta de paso
+*/
 	function validarRespuesta(valor, msj, esSummit) {
 		var res = false;
 		var cadena = valor.trim();
@@ -151,3 +211,4 @@
 		}
 		return res;	
 	}
+
