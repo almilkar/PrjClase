@@ -1,12 +1,12 @@
 ﻿/*
-*	function cuantasHay(cadena, letra)
+*	function cuantasOcurrenciasHay(cadena, letra)
 *	cadena:  cadena de texto a analizar
 *	letra:   letra que se contabiliza
 *
 *	Contabiliza el numero de apariciones de un caracter en una cadena
 *
 */
-	function cuantasHay(cadena, letra) {
+	function cuantasOcurrenciasHay(cadena, letra) {
 		cuenta = 0;
 		posicion = cadena.indexOf(letra);
 		while ( posicion != -1 ) {
@@ -59,11 +59,11 @@
 		}
 
 		if (longitud >= 5) {
-			if (cuantasHay(valor,".")>1) {
+			if (cuantasOcurrenciasHay(valor,".")>1) {
 				document.getElementById(msj).textContent = "Aviso formato e-mail: x@y.z"
 				return false;
 			}
-			if (cuantasHay(valor,"@")>1) {
+			if (cuantasOcurrenciasHay(valor,"@")>1) {
 				document.getElementById(msj).textContent = "Aviso formato e-mail: x@y.z"
 				return false;
 			}
