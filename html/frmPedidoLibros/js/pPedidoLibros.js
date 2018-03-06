@@ -318,6 +318,53 @@ function creaDD(tipoEnvioDat, iSelector) {
 
   }
 
+
+  /* -------------------------
+  * FUNCION
+  * - function validaCodigoPostal(cp, msjCab, msjDet): 
+  * PARAMETROS
+  * - cp: código postal
+  * - msjCab: mensaje error, título
+  * - msjDet: mensaje error, descripción
+  * CONTEXTO
+  *   "onblur" en "input type text" Código Postal
+  * DESCRIPCION
+  *   Valida el formato del Código Postal
+  *
+  */
+  function validaCodigoPostal(cp, msjCab, msjDet) {
+    var codprov;
+    var codnumprov;
+    var vMsjCab = document.getElementById(msjCab);
+    var vMsjDet = document.getElementById(msjDet);
+    
+    cp = cp.toString().trim();
+    if (cp == "") {
+      vMsjCab.textContent = ""; vMsjDet.textContent = "";
+    } else {
+      if (isNaN(cp) == true) {
+        vMsjCab.textContent = "Error (CP)";
+        vMsjCab.textContent = "Debe tener 5 caracteres numéricos";
+      } else {
+        if (cp.length != 5) {
+          vMsjCab.textContent = "Error (CP)";
+          vMsjCab.textContent = "Debe tener 5 caracteres numéricos";
+        } else {
+          codprov = cp.substring(0,2);
+          codnumprov = parseInt(codprov);
+          if (codnumprov > 52 || codnumprov < 1) {
+            vMsjCab.textContent = "Error (CP)";
+            vMsjCab.textContent = "Un código de provincia válido está entre 01 y 52";
+          } else {
+            vMsjCab.textContent = ""; vMsjDet.textContent = "";
+          }
+        }
+      } 
+    }
+    return codnumprov;
+  }
+
+
   /* -------------------------
   * FUNCION
   * - function validaNIF(controlTexto, strNIF): 

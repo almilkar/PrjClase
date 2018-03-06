@@ -88,9 +88,6 @@
     </fieldset>
   </div>
 
-  
-
-
 
   <div id="idDatosPersonales">
     <fieldset>
@@ -105,7 +102,10 @@
         <label for="iddireccionpoblacion">Población:</label><br>
         <input type="text" name="direccionpoblacion" id="iddireccionpoblacion" size="40"><br>
         <label for="iddireccioncp">C.P.:</label><br>
-        <input type="text" name="direccioncp" id="iddireccioncp" size="20" maxlength="5"><br>
+        <input type="text" name="direccioncp" id="iddireccioncp" size="20" maxlength="5"
+          onblur="validaCodigoPostal(this.value, 'msjCabIP', 'msjDetIP')" 
+        >
+        <br>
 
         <label for="idDNI">D.N.I.:</label><br>
         <input type="text" name="dni" id="idDNI" size="9" required 
@@ -119,6 +119,11 @@
         <input type="email" name="email" id="idemail" size="20" placeholder="usuario@servidor.dominio"><br>
         <label for="idtelefono">Teléfono:</label><br>
         <input type="tel" name="telefono" id="idtel" size="20"><br>
+    </fieldset>
+
+    <fieldset>
+      <legend id="msjCabIP"></legend>
+      <span id="msjDetIP"></span>
     </fieldset>
 
     <fieldset>
